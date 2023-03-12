@@ -1,0 +1,163 @@
+body {
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: whitesmoke;
+}
+
+h1 {
+    align-self: start;
+    color: #50535b;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.item {
+    color: #50535b;
+    border-bottom: .1rem solid darkgrey;
+    background-color: rgb(238, 238, 238);
+}
+
+.item:last-child {
+    border-color: transparent;
+}
+
+.item:hover {
+    color: black;
+}
+
+.item input {
+    display: none;
+}
+
+.item input:checked ~ .title {
+    background-color: rgb(235, 255, 171);
+}
+
+.item input:checked ~ .title .cross {
+    rotate: 0deg;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem;
+    font-weight: 700;
+    transition: all 0.5s linear;
+}
+
+.cross {
+    height: 1rem;
+    width: 1rem;
+    background: url(./images/svg/x.svg) no-repeat center;
+    background-size: contain;
+    rotate: -45deg;
+    transition: all 0.5s linear;
+}
+
+.image {
+    display: block;
+    height: 0;
+    margin: 1rem;
+    transition: all 0.5s linear;
+    background: no-repeat center;
+    background-size: contain;
+}
+
+.image-1 {
+    background-image: url(./images/special_task.jpg);
+}
+
+.image-2 {
+    background-image: url(./images/excel_numbers.jpg);
+}
+
+.image-3 {
+    background-image: url(./images/fixing_bug.jpg);
+}
+
+.image-4 {
+    background-image: url(./images/exit_vim.jpg);
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.cross {
+    opacity: 0;
+}
+
+.accordion:hover .item .title .cross {
+    opacity: 1;
+}
+
+.item input:checked ~ .title {
+    color: black;
+}
+
+.item input:active ~ .title {
+    color: black;
+}
+
+.item input:active ~ .image {
+    filter: opacity(.5);
+}
+
+.item:hover .title .cross {
+    rotate: 0deg;
+}
+
+@media (min-width: 320px) {
+    .item input:checked ~ .image {
+        height: 10rem;
+    }
+
+    .item:hover .image {
+        height: 10rem;
+    }
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 1.3rem;
+    }
+
+    .item input:checked ~ .image {
+        height: 20rem;
+    }
+
+    .item:hover .image {
+        height: 20rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    .item input:checked ~ .image {
+        height: 30rem;
+    }
+
+    .item:hover .image {
+        height: 30rem;
+    }
+}
